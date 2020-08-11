@@ -1,5 +1,5 @@
 /*
-* SJS 6.5.0
+* SJS 6.5.0-fork.0
 * Minimal SystemJS Build
 */
 (function () {
@@ -566,7 +566,6 @@
       lastWindowErrorUrl = evt.filename;
       lastWindowError = evt.error;
     });
-    var baseOrigin = location.origin;
   }
 
   systemJSPrototype.createScript = function (url) {
@@ -576,8 +575,9 @@
     // Only add cross origin for actual cross origin
     // this is because Safari triggers for all
     // - https://bugs.webkit.org/show_bug.cgi?id=171566
-    if (!url.startsWith(baseOrigin + '/'))
-      script.crossOrigin = 'anonymous';
+    // 允许跨域脚本
+    // if (!url.startsWith(baseOrigin + '/'))
+    //   script.crossOrigin = 'anonymous';
     var integrity = importMap.integrity[url];
     if (integrity)
       script.integrity = integrity;
