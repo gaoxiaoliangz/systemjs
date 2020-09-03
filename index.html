@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System.js example</title>
+    <script src="./dist/system.js"></script>
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "fn-subtract": "./examples/subtract.js"
+        }
+      }
+    </script>
+    <script>
+      System.extendImportMap({
+        imports: {
+          "fn-add": "./examples/add.js",
+        },
+      });
+    </script>
+  </head>
+  <body>
+    <script src="./examples/main.js"></script>
+  </body>
+</html>
