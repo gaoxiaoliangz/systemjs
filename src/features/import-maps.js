@@ -67,3 +67,7 @@ function extendImportMap (importMap, newMapText, newMapUrl) {
   }
   resolveAndComposeImportMap(newMap, newMapUrl, importMap);
 }
+
+systemJSPrototype.extendImportMap = function (newMap) { 
+  resolveAndComposeImportMap(newMap, baseUrl, importMap);
+}
