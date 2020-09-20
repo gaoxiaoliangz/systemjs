@@ -1,3 +1,13 @@
+SystemJS 6.6.1
+* IE11 support bug fix (https://github.com/systemjs/systemjs/pull/2247)
+
+SystemJS 6.6.0
+* Fix autoimport dynamic import conflicts (https://github.com/systemjs/systemjs/pull/2245)
+* Set "type": "script" in package.json (https://github.com/systemjs/systemjs/pull/2246)
+
+SystemJS 6.5.1
+* Fix depcache hook (https://github.com/systemjs/systemjs/pull/2242)
+
 SystemJS 6.5.0
 * import.meta.resolve implementation (https://github.com/systemjs/systemjs/pull/2230)
 * Import maps integrity feature (https://github.com/systemjs/systemjs/pull/2229)
