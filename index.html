@@ -18,6 +18,9 @@
           "fn-add": "./examples/add.js",
         },
       });
+      System.subscribe(e => {
+        console.log('system event', e)
+      })
     </script>
   </head>
   <body>

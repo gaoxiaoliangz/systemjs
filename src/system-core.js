@@ -36,6 +36,18 @@ systemJSPrototype.import = function (id, parentUrl) {
   .then(function (id) {
     var load = getOrCreateLoad(loader, id);
     return load.C || topLevelLoad(loader, load);
+  })
+  .then(module => {
+    if (Array.isArray(this._listeners)) {
+      this._listeners.forEach(listener => {
+        if (typeof listener === 'function')
+        listener({
+          type: 'resolved',
+          module,
+        })
+      })
+    }
+    return module
   });
 };
 
