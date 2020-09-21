@@ -3,7 +3,7 @@ System.import("fn-add").then((module) => {
   console.log("add result", result);
 });
 
-System.import("fn-subtract").then((module) => {
+System.import("./examples/subtract.js").then((module) => {
   const result = module.subtract(2, 1);
   console.log("subtract result", result);
 });

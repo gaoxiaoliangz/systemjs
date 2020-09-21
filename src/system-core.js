@@ -40,11 +40,14 @@ systemJSPrototype.import = function (id, parentUrl) {
   .then(module => {
     if (Array.isArray(this._listeners)) {
       this._listeners.forEach(listener => {
-        if (typeof listener === 'function')
-        listener({
-          type: 'resolved',
-          module,
-        })
+        if (typeof listener === 'function') {
+          listener({
+            type: 'resolved',
+            module,
+            id,
+            parentUrl,
+          })
+        }
       })
     }
     return module
