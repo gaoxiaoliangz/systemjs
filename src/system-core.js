@@ -27,6 +27,16 @@ function SystemJS () {
 
 var systemJSPrototype = SystemJS.prototype;
 
+systemJSPrototype.notify = function (event) {
+  if (Array.isArray(this._listeners)) {
+    this._listeners.forEach(listener => {
+      if (typeof listener === 'function') {
+        listener(event)
+      }
+    })
+  }
+}
+
 systemJSPrototype.import = function (id, parentUrl) {
   var loader = this;
   return Promise.resolve(loader.prepareImport())
@@ -38,18 +48,12 @@ systemJSPrototype.import = function (id, parentUrl) {
     return load.C || topLevelLoad(loader, load);
   })
   .then(module => {
-    if (Array.isArray(this._listeners)) {
-      this._listeners.forEach(listener => {
-        if (typeof listener === 'function') {
-          listener({
-            type: 'resolved',
-            module,
-            id,
-            parentUrl,
-          })
-        }
-      })
-    }
+    loader.notify({
+      type: 'import',
+      module,
+      id,
+      parentUrl,
+    })
     return module
   });
 };
@@ -75,6 +79,11 @@ function triggerOnload (loader, load, err, isErrSource) {
   loader.onload(err, load.id, load.d && load.d.map(loadToId), !!isErrSource);
   if (err)
     throw err;
+  loader.notify({
+    type: 'exec',
+    id: load.id,
+    load,
+  })
 }
 
 var lastRegister;
