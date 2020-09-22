@@ -1,5 +1,14 @@
 # SystemJS
 
+## CDN
+
+国内\
+https://sf1-ttcdn-tos.pstatp.com/obj/unpkg/dp/systemjs/6.6.1-fork.2/dist/system.min.js
+
+海外\
+https://sf16-unpkg-va.ibytedtos.com/dp/systemjs/6.6.1-fork.2/dist/system.min.js
+
+
 [![Build Status](https://travis-ci.com/systemjs/systemjs.svg?branch=master)](https://travis-ci.com/systemjs/systemjs)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/systemjs/systemjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Backers on Open Collective](https://opencollective.com/systemjs/backers/badge.svg)](#backers)
