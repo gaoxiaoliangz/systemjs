@@ -8,22 +8,25 @@
     <script type="systemjs-importmap">
       {
         "imports": {
-          "fn-subtract": "./examples/subtract.js"
+          "subtract": "./examples/subtract.js",
+          "add": "./examples/add.js"
         }
       }
     </script>
     <script>
       System.extendImportMap({
         imports: {
-          "fn-add": "./examples/add.js",
+          "math": "./examples/math.js",
         },
       });
+
       System.subscribe(e => {
         console.log('system event', e)
       })
     </script>
   </head>
   <body>
+    <button class="js-load-math">Load math</button>
     <script src="./examples/main.js"></script>
   </body>
 </html>
