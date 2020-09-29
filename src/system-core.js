@@ -121,24 +121,18 @@ export function getOrCreateLoad (loader, id, firstParentUrl) {
       // note if we have hoisted exports (including reexports)
       load.h = true;
       var changed = false;
-      if (typeof name !== 'object') {
+      if (typeof name !== 'object' && typeof name !== 'function') {
         if (!(name in ns) || ns[name] !== value) {
           ns[name] = value;
           changed = true;
         }
       }
       else {
-        for (var p in name) {
-          var value = name[p];
-          if (!(p in ns) || ns[p] !== value) {
-            ns[p] = value;
-            changed = true;
-          }
-        }
-
-        if (name.__esModule) {
-          ns.__esModule = name.__esModule;
-        }
+        // 不使用浅拷贝，每次都触发 change。之前的方式会导致一些问题，比如一些库认为导入的 package 是一个对象会有
+        // hasOwnProperty 方法，另外想 vue 之类的库会导出一个函数，原先的浅拷贝逻辑也不适用，所以先这样，不知道会
+        // 不会有其他坑
+        ns = name;
+        changed = true;
       }
       if (changed)
         for (var i = 0; i < importerSetters.length; i++) {
@@ -205,7 +199,9 @@ export function getOrCreateLoad (loader, id, firstParentUrl) {
     // we retain this to add more later
     i: importerSetters,
     // module namespace object
-    n: ns,
+    get n() {
+      return ns;
+    },
 
     // instantiate
     I: instantiatePromise,
