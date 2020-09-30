@@ -1,6 +1,6 @@
 {
   "name": "@dp/systemjs",
-  "version": "6.6.1-fork.3",
+  "version": "1.0.0",
   "main": "dist/system-node.cjs",
   "exports": {
     ".": {
