@@ -4,7 +4,6 @@
 //   console.log("result", result);
 // });
 
-
 const loadMath = () => {
   const r = System.resolve('math')
   console.log(r)
@@ -14,8 +13,6 @@ const loadMath = () => {
     console.log("add result", result);
   });
 }
-
-loadMath()
 
 const btn = document.querySelector('.js-load-math')
 btn.addEventListener('click', e => {

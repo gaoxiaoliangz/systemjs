@@ -14,11 +14,13 @@
       }
     </script>
     <script>
-      System.extendImportMap({
-        imports: {
-          "math": "./examples/math.js",
-        },
-      });
+      setTimeout(() => {
+        System.extendImportMap({
+          imports: {
+            "math": "./examples/math.js",
+          },
+        });
+      }, 100);
 
       System.subscribe(e => {
         console.log('system event', e)
