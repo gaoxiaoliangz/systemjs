@@ -27,15 +27,8 @@ function SystemJS () {
 
 var systemJSPrototype = SystemJS.prototype;
 
-systemJSPrototype.notify = function (event) {
-  if (Array.isArray(this._listeners)) {
-    this._listeners.forEach(listener => {
-      if (typeof listener === 'function') {
-        listener(event)
-      }
-    })
-  }
-}
+// default notify
+systemJSPrototype.notify = function () {};
 
 systemJSPrototype.import = function (id, parentUrl) {
   var loader = this;
@@ -49,12 +42,12 @@ systemJSPrototype.import = function (id, parentUrl) {
   })
   .then(module => {
     loader.notify({
-      type: 'import',
+      type: 'import-resolved',
       module,
       id,
       parentUrl,
     })
-    return module
+    return module;
   });
 };
 
@@ -80,7 +73,7 @@ function triggerOnload (loader, load, err, isErrSource) {
   if (err)
     throw err;
   loader.notify({
-    type: 'exec',
+    type: 'load',
     id: load.id,
     load,
   })

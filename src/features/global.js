@@ -10,7 +10,7 @@ systemJSPrototype.registerGlobal = function (importKey, globalName) {
   var id;
 
   var listener = function (e) {
-    if (e.type === 'exec' && e.id === id) {
+    if (e.type === 'load' && e.id === id) {
       System.unsubscribe(listener);
       if (!window[globalName]) {
         window[globalName] = e.load.n;
@@ -22,6 +22,6 @@ systemJSPrototype.registerGlobal = function (importKey, globalName) {
 
   System.prepareImport().then(function () {
     id = System.resolve(importKey);
-    System.subscribe(listener);
+    System.subscribe(listener, true);
   });
 }
