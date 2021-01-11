@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.2.0](https://github.com/systemjs/systemjs/compare/fork1.1.0...fork1.2.0) (2021-01-11)
+
+
+### Features
+
+* subscribe 支持 buffered 参数 ([efae28e](https://github.com/systemjs/systemjs/commit/efae28ee56db64b763f52462a58b5041d9a22e00))
+
+
+
 # 1.1.0 (2021-01-11)
 
 
