@@ -3,10 +3,10 @@
 ## CDN
 
 国内\
-https://sf1-ttcdn-tos.pstatp.com/obj/unpkg/dp/systemjs/1.1.0/dist/system.min.js
+https://sf1-ttcdn-tos.pstatp.com/obj/unpkg/dp/systemjs/1.2.0/dist/system.min.js
 
 海外\
-https://sf16-unpkg-va.ibytedtos.com/dp/systemjs/1.1.0/dist/system.min.js
+https://sf16-unpkg-va.ibytedtos.com/dp/systemjs/1.2.0/dist/system.min.js
 
 ## Fork 版改变了什么？
 
