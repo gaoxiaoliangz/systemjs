@@ -12,7 +12,7 @@ https://sf16-unpkg-va.ibytedtos.com/dp/systemjs/1.2.0/dist/system.min.js
 
 - 移除了 script 加载的跨域限制
 - 实现 `System.extendImportMap`, 支持运行时扩展 importMap
-- 实现 `System.subscribe`, 支持 `import` 和 `exec` 事件订阅
+- 实现 `System.subscribe`, 支持 `import-resolved` 和 `load` 事件订阅
 - 修改了 module 容器处理方式，不再使用新创建的对象为 module 的 ns
 - 实现 `System.registerGlobal`, 支持暴露特定模块到全局
 
