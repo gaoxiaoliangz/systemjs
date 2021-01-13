@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.1](https://github.com/systemjs/systemjs/compare/fork1.2.0...fork1.2.1) (2021-01-13)
+
+
+### Bug Fixes
+
+* 修复 registerGlobal 可能无法解析 specifier 的问题 ([43919a8](https://github.com/systemjs/systemjs/commit/43919a8f64c39d8eae87d464dd02d5d4d844282e))
+
+
+
 # [1.2.0](https://github.com/systemjs/systemjs/compare/fork1.1.0...fork1.2.0) (2021-01-11)
 
 
