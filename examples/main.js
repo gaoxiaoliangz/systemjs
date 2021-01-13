@@ -22,5 +22,3 @@ const btn = document.querySelector('.js-load-math')
 btn.addEventListener('click', e => {
   loadMath()
 })
-
-System.registerGlobal('add', 'Add')
