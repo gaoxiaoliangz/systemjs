@@ -58,6 +58,20 @@ function extendImportMap (importMap, newMapText, newMapUrl) {
   resolveAndComposeImportMap(newMap, newMapUrl, importMap);
 }
 
-systemJSPrototype.extendImportMap = function (newMap) { 
+// system.js 使用解析过的 url 作为缓存的 key, 也就是说 extend 之后，如果是同样的 key 不同的 url，把之前的 imports 
+// 覆盖之后还是会造成重新加载，因为 url 不一样了，现在默认阻止这种覆盖行为
+systemJSPrototype.extendImportMap = function (newMap, override) { 
+  if (!override) {
+    var newImports = {};
+    Object.keys(newMap.imports).forEach(key => {
+      if (!importMap.imports[key]) {
+        newImports[key] = newMap.imports[key];
+      }
+    })
+    newMap = Object.assign({}, newMap, {
+      imports: newImports,
+    })
+  }
+
   resolveAndComposeImportMap(newMap, baseUrl, importMap);
 }

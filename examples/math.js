@@ -1,3 +1,7 @@
+if (window.math) {
+  throw new Error('math already exists')
+}
+
 System.register(['add'], function (_export, _context) {
 
   let addModule
@@ -7,6 +11,7 @@ System.register(['add'], function (_export, _context) {
       addModule = s
     }],
     execute: function () {
+      window.math = true;
       _export("add", addModule.add);
     },
   };
