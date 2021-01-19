@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.3.0](https://github.com/systemjs/systemjs/compare/fork1.2.1...fork1.3.0) (2021-01-19)
+
+
+### Features
+
+* extendImportMap 支持 override 参数 ([624ce2e](https://github.com/systemjs/systemjs/commit/624ce2e2964e108ea5a7b5f65ea3812ddced3277))
+
+
+
 ## [1.2.1](https://github.com/systemjs/systemjs/compare/fork1.2.0...fork1.2.1) (2021-01-13)
 
 
