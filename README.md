@@ -3,15 +3,15 @@
 ## CDN
 
 国内\
-https://sf1-ttcdn-tos.pstatp.com/obj/unpkg/dp/systemjs/1.2.1/dist/system.min.js
+https://sf1-ttcdn-tos.pstatp.com/obj/unpkg/dp/systemjs/1.3.0/dist/system.min.js
 
 海外\
-https://sf16-unpkg-va.ibytedtos.com/dp/systemjs/1.2.1/dist/system.min.js
+https://sf16-unpkg-va.ibytedtos.com/dp/systemjs/1.3.0/dist/system.min.js
 
 ## Fork 版改变了什么？
 
 - 移除了 script 加载的跨域限制
-- 实现 `System.extendImportMap`, 支持运行时扩展 importMap
+- 实现 `System.extendImportMap`, 支持运行时扩展 importMap, 默认不覆盖已存在的 key
 - 实现 `System.subscribe`, 支持 `import-resolved` 和 `load` 事件订阅
 - 修改了 module 容器处理方式，不再使用新创建的对象为 module 的 ns
 - 实现 `System.registerGlobal`, 支持暴露特定模块到全局
